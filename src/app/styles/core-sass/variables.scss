@@ -1,0 +1,108 @@
+$family-primary: 'Gibson';
+$family-secondary: 'Gibson';
+
+// Colors
+
+
+// Grey colors
+
+$black:        #000;
+$white:        #fff;
+$grey:         #B1B1B1;
+$grey-light:   #D3D2D2;
+$grey-lighter: #E5E5E5;
+$grey-lightest: #F2F2F2;
+$grey-dark:    #919293;
+$dark:         #636466;
+$darkest:      #231F20;
+
+
+// brand colors
+
+$primary:         #B11F24;
+$secondary:       #F49C00;
+
+
+// Gradient color:
+
+$blue-gradient:     linear-gradient(#23CEDC, #0D84A0);
+$green-gradient:    linear-gradient(#52DD90, #33BE71);
+
+
+// Base colors
+
+$red:          #FF0000;
+$orange:       #FF9300;
+$green:        #14CC54;
+$blue:         #14F8FF;
+
+$olive:        #9CA532;
+$brownish:     #A0800B;
+$yellow:       #EA9E00;
+$pumpkin:      #D05B10;
+$red-deep:     #9A211C;
+$violet-red:   #A02E54;
+$purple:       #6D5BCC;
+$blue-deep:    #2042A2;
+$turkish:      #2E5B90;
+$green-deep:   #3D9162;
+
+$olive-light:        #FBFFCB;
+$brownish-light:     #F3ECD3;
+$yellow-light:       #F4DEB0;
+$pumpkin-light:      #F2CEB7;
+$red-deep-light:     #F2C3C1;
+$violet-red-light:   #FFCBDC;
+$purple-light:       #E2DDFA;
+$blue-deep-light:    #C7D0EA;
+$turkish-light:      #D3E8F3;
+$green-deep-light:   #CBF1DA;
+
+
+// status colors
+
+$success:         $green;
+$danger:          $red;
+$warning:         $orange;
+$error:         #ED5E5E;
+$error-light:   #FCC0C0;
+
+
+//media queries
+$tablet: 769px;
+$desktop: 1150px;
+$widescreen: 1440px;
+$fullhd: 1740px;
+
+
+
+// radius
+
+$radius-small: 4px;
+$radius: 6px;
+$radius-large: 5px;
+
+
+
+
+@mixin appearance-reset {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+          appearance: none;
+  background: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  line-height: 1;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  height: auto;
+
+  &:focus, &:active {
+    outline: none;
+    border: transparent;
+    box-shadow: none;
+  }
+} 
