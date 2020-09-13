@@ -2,6 +2,8 @@ import { Enrollee } from './../models/enrollee.model';
 import { MainService } from '../../../shared/services/main.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import * as _ from 'lodash';
+
 
 @Injectable({
     providedIn: 'root'
@@ -21,7 +23,8 @@ export class EnrolleeService {
     }
 
     public updateEnrollee(enrollee: Enrollee): Observable<any> {
-        return this.mainService.put(`${this.featurePath}/${enrollee.id}`, enrollee);
+        const enrolleeData = _.omit(enrollee, ['id', 'dateOfBirth']);
+        return this.mainService.put(`${this.featurePath}/${enrollee.id}`, enrolleeData);
     }
 
 }

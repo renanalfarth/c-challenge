@@ -19,6 +19,7 @@
           "options": {
             "outputPath": "dist/centene-challenge",
             "index": "src/index.html",
+            "allowedCommonJsDependencies": ["lodash"],
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
