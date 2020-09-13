@@ -1,15 +1,38 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppHeaderComponent } from './components/app-header/app-header.component';
-import { AppFooterComponent } from './components/app-footer/app-footer.component';
+
 import { AppSidebarComponent } from './components/app-sidebar/app-sidebar.component';
 
-
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppHeaderComponent, AppFooterComponent, AppSidebarComponent],
+  declarations: [
+    AppSidebarComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    RouterModule
+  ],
+  exports: [
+    AppSidebarComponent
   ]
 })
 export class SharedModule { }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppFooterComponent } from './app-footer.component';
+import { EnrolleeEditComponent } from './enrollee-edit.component';
 
-describe('AppFooterComponent', () => {
-  let component: AppFooterComponent;
-  let fixture: ComponentFixture<AppFooterComponent>;
+describe('EnrolleeEditComponent', () => {
+  let component: EnrolleeEditComponent;
+  let fixture: ComponentFixture<EnrolleeEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppFooterComponent ]
+      declarations: [ EnrolleeEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppFooterComponent);
+    fixture = TestBed.createComponent(EnrolleeEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

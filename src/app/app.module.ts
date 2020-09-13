@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,13 +11,14 @@ import { HomeModule } from './pages/home/home.module';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatSidenavModule } from '@angular/material';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     CommonModule,
     AppRoutingModule,
@@ -25,7 +27,7 @@ import { MatSidenavModule } from '@angular/material';
     HomeModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSidenavModule
+    SharedModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent]

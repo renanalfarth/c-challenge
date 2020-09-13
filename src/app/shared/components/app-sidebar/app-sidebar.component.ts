@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-app-sidebar',
+  selector: 'app-sidebar',
   templateUrl: './app-sidebar.component.html',
   styleUrls: ['./app-sidebar.component.scss']
 })
-export class AppSidebarComponent implements OnInit {
+export class AppSidebarComponent {
 
-  constructor() { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
-  ngOnInit(): void {
-  }
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
 }

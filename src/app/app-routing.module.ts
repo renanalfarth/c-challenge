@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HomeModule } from './pages/home/home.module';
-import { EnrolleeModule } from './pages/enrollee/enrollee.module';
+import { NotFoundPageComponent } from './core/components/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
-      path: '',
-      component: AppComponent,
-      children: [
-          {
-              path: '',
-              redirectTo: '/home/dashboard',
-              pathMatch: 'full'
-          },
-          { path: 'dashboard', loadChildren: () => HomeModule },
-          { path: 'enrollee', loadChildren: () => EnrolleeModule, data: { preload: false } },
-      ]
+    path: 'dashboard',
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'enrollee',
+    loadChildren: () => import('./pages/enrollee/enrollee.module').then(m => m.EnrolleeModule)
+  },
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: NotFoundPageComponent
   }
 ];
 
