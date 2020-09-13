@@ -2,11 +2,11 @@
 
     <h3>Edit Enrollee</h3>
 
-    <form [formGroup]="enrolleeForm" (click)="submitForm()">
+    <form [formGroup]="enrolleeForm" (submit)="submitForm()">
 
         <mat-form-field appearance="fill">
             <mat-label>Id</mat-label>
-            <input matInput formControlName="id" disabled />
+            <input matInput formControlName="id" readonly />
         </mat-form-field>
         
         <br />
@@ -27,8 +27,12 @@
             <mat-label>Active</mat-label>
     
             <select matNativeControl formControlName="active" required>
-                <option value="true" [selected]="enrolleeForm.value.active === true">Yes</option>
-                <option value="false" [selected]="enrolleeForm.value.active === false">No</option>
+                <option 
+                    *ngFor="let item of options"
+                    [value]="item.id"
+                    [selected]="enrolleeForm.value.active === item.id">
+                    {{ item.label }}
+                </option>
             </select>
     
             <mat-error *ngIf="enrolleeForm.controls.active.invalid">
@@ -41,7 +45,7 @@
         
         <mat-form-field appearance="fill">
             <mat-label>Date Of Birth</mat-label>
-            <input matInput formControlName="dateOfBirth" disabled />
+            <input matInput formControlName="dateOfBirth" readonly />
         </mat-form-field>
 
         <br />

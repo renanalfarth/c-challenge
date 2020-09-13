@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/enrollee/enrollee.module').then(m => m.EnrolleeModule)
   },
   {
+    path: 'notes',
+    loadChildren: () => import('./pages/notes/notes.module').then(m => m.NotesModule)
+  },
+  {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full'

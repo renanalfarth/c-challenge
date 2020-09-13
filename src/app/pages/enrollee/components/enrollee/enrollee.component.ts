@@ -3,6 +3,7 @@ import { EnrolleeService } from '../../services/enrollee.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Enrollee } from '../../interfaces/enrollee.interface';
+import { SweetAlertService } from '../../../../core/utils/sweet-alert.service';
 
 @Component({
   selector: 'app-enrollee',
@@ -17,7 +18,7 @@ export class EnrolleeComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private enrolleeService: EnrolleeService) { }
+  constructor(private enrolleeService: EnrolleeService, private sweetAlert: SweetAlertService) { }
 
   ngOnInit(): void {
     this.getEnrollees();
@@ -27,6 +28,8 @@ export class EnrolleeComponent implements OnInit{
     this.enrolleeService.getEnrollees().subscribe(result => {
       this.items = new MatTableDataSource<Enrollee>(result);
       this.items.paginator = this.paginator;
+    }, error => {
+      this.sweetAlert.showError(error.message);
     });
   }
 

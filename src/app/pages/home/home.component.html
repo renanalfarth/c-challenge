@@ -1,23 +1,132 @@
-<p>home works!</p>
+<h1>Candidate: Renan Eduardo Kuhnen Alfarth</h1>
 
-<p>home works!</p>
+<hr />
 
-<p>home works!</p>
+<br />
 
-<p>home works!</p>
+<h1 id="hi-there">Hi there! 🐱‍</h1>
 
-<p>home works!</p>
+<p>We're excited for you to be taking our coding challenge!</p>
 
-<p>home works!</p>
+<p>
+    First things first, since this is a front-end coding challenge, we've created a little back-end microservice to
+    assist you. This microservice was written as a <a href="https://deno.land/">Deno</a> application.
+</p>
 
-<p>home works!</p>
+<p>
+    To run the microservice, download and install Deno and run the following command in this directory from the command
+    line:
+</p>
 
-<p>home works!</p>
+<pre><code>deno run --allow-net server.ts</code></pre>
 
-<p>home works!</p>
+<p>
+    (Note that you have to be sure to specify <code>--allow-net</code> to grant the server network access. This is
+    because Deno is <a href="https://deno.land/manual/getting_started/permissions">secure by default</a>. 👌)
+</p>
 
-<p>home works!</p>
+<p>
+    The server will start on port 8080. If you need to change this (maybe you're running something else on port 8080),
+    you can specify the port:
+</p>
 
-<p>home works!</p>
+<pre><code>deno run --allow-net server.ts --port=8081</code></pre>
 
-<p>home works!</p>
+<p>Now, onto the good stuff :rocket:</p>
+
+<h1 id="the-challenge">The challenge</h1>
+
+<p>
+    Using Angular, design a cool user interface that has the following features: - Users can view a list of all enrollees
+    in the system - Users should be able to see all of the data related to an enrollee (their id, activation status,
+    name, date of birth) - Users should be able to tell which enrollees are activated and which are not at a glance -
+    Users should be able to change the name and activation status of an enrollee - Users <strong>cannot</strong> modify
+    the id or date of birth of an enrollee
+</p>
+
+<p>👉 <em>Treat this code as if it were being deployed in production to be maintained by a team of developers.</em></p>
+
+<p>
+    The rest is up to you! There is no &quot;correct&quot; solution here. Reach into your bag of your tricks and do what
+    you love to do!
+</p>
+
+<p>You got this! 💪</p>
+
+<p>
+    <strong>💰BONUS CHALLENGE</strong>💰: A developer working on the backend mentioned that one of the enrollees doesn't
+    appear to be working. Getting or modifying this enrollee was causing an internal server error. Sadly, they couldn't
+    remember which enrollee had this issue. Can you fix this?
+</p>
+
+<p class="bonus-highlight">BONUS CHALLENGE RESOLUTION CAN BEN ACCESSED BY USING THE `NOTES` MENU</p>
+
+<h1 id="submitting-your-code">Submitting your code</h1>
+
+<p>Please create a new repo under your personal github account for this code and send it our way when you're all done!</p>
+
+<h1 id="the-rest-api">The REST API</h1>
+
+<p>The API here is nice and simple.</p>
+
+<h3 id="get-enrollees---fetch-all-enrollees"><strong>GET /enrollees</strong> - fetch all enrollees</h3>
+
+<p>Response:</p>
+
+<pre>
+    <code>
+    [{{'{'}}
+        &quot;id&quot;: string,
+        &quot;active&quot;: boolean,
+        &quot;name&quot;: string,
+        &quot;dateOfBirth&quot;: string
+    },]
+    </code>
+</pre>
+
+<h3 id="get-enrolleesid---fetch-an-enrollee-by-id"><strong>GET /enrollees/{{'{'}}id{{'}'}}</strong> - fetch an enrollee by id</h3>
+
+<p>Response:</p>
+
+<pre>
+    <code>
+    {{'{'}}
+    &quot;id&quot;: string,
+    &quot;active&quot;: boolean,
+    &quot;name&quot;: string,
+    &quot;dateOfBirth&quot;: string
+    },
+    </code>
+</pre>
+
+<h3 id="put-enrolleesid---modify-an-enrollee"><strong>PUT /enrollees/{{'{'}}id{{'}'}}</strong> - modify an enrollee</h3>
+
+<p>Request body:</p>
+
+<pre>
+    <code>
+    {{'{'}}
+    &quot;active&quot;: boolean,
+    &quot;name&quot;: string
+    &quot;dateOfBirth&quot;: string (optional)
+    },
+    </code>
+</pre>
+
+<p>Response (the modified enrollee is simply returned):</p>
+
+<pre>
+    <code>
+    {{'{'}}
+    &quot;id&quot;: string,
+    &quot;active&quot;: boolean,
+    &quot;name&quot;: string,
+    &quot;dateOfBirth&quot;: string
+    {{'}'}},
+    </code>
+</pre>
+
+<p>
+    <strong>Note: We're just storing the list of enrollees in memory here, no database, so any changes you make will be
+    reset when you restart the microservice.</strong>
+</p>

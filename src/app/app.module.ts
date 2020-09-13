@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './shared/shared.module';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     HttpClientModule,
+    NgHttpLoaderModule.forRoot(),
     BrowserModule,
     CommonModule,
     AppRoutingModule,

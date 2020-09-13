@@ -21,7 +21,7 @@ export class EnrolleeService {
     }
 
     public updateEnrollee(enrollee: Enrollee): Observable<any> {
-        return this.mainService.get(`${this.featurePath}/${enrollee.id}`, enrollee);
+        return this.mainService.put(`${this.featurePath}/${enrollee.id}`, enrollee);
     }
 
 }

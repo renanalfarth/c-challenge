@@ -1,0 +1,12 @@
+.bonus-highlight {
+    color: #ff0000;
+    font-weight: bold;
+    animation:blinkingText 3.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #ff0000;    }
+    49%{    color: #ff0000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #ff0000;    }
+}
