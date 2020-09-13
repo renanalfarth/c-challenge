@@ -5,6 +5,13 @@
     <form [formGroup]="enrolleeForm" (click)="submitForm()">
 
         <mat-form-field appearance="fill">
+            <mat-label>Id</mat-label>
+            <input matInput formControlName="id" disabled />
+        </mat-form-field>
+        
+        <br />
+
+        <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
             <input matInput formControlName="name" required>
     
@@ -13,7 +20,9 @@
             </mat-error>
 
         </mat-form-field>
-        <br>
+
+        <br />
+
         <mat-form-field appearance="fill">
             <mat-label>Active</mat-label>
     
@@ -26,6 +35,13 @@
                 <span *ngIf="enrolleeForm.controls.active.errors.required">This field is mandatory.</span>
             </mat-error>
     
+        </mat-form-field>
+        
+        <br />
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput formControlName="dateOfBirth" disabled />
         </mat-form-field>
 
         <br />

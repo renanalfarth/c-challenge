@@ -27,9 +27,14 @@ export class EnrolleeEditComponent implements OnInit {
     this.getEnrollee();
 
     this.enrolleeForm = this.formBuilder.group({
+      id: [null, Validators.required],
+      dateOfBirth: [null, Validators.required],
       name: [null, Validators.required],
       active: [null, Validators.required]
     });
+
+    this.enrolleeForm.controls.id.disable();
+    this.enrolleeForm.controls.dateOfBirth.disable();
 
   }
 
