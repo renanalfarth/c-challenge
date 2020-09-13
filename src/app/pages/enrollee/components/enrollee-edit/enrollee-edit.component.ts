@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EnrolleeService } from '../../services/enrollee.service';
-import { EnrolleeStatus } from '../../models/enrollee-status.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({

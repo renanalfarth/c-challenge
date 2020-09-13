@@ -11,15 +11,15 @@
             <mat-error *ngIf="enrolleeForm.controls.name.invalid">
                 <span *ngIf="enrolleeForm.controls.name.errors.required">This field is mandatory.</span>
             </mat-error>
-    
+
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label>Active</mat-label>
     
             <select matNativeControl formControlName="active" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="true" [selected]="enrolleeForm.value.active === true">Yes</option>
+                <option value="false" [selected]="enrolleeForm.value.active === false">No</option>
             </select>
     
             <mat-error *ngIf="enrolleeForm.controls.active.invalid">
