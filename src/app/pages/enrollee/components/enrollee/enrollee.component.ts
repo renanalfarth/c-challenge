@@ -14,7 +14,6 @@ export class EnrolleeComponent implements OnInit{
 
   items: any;
   displayedColumns: string[] = ['id', 'name', 'dateOfBirth', 'active', 'actions'];
-  searchTerm: string;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
